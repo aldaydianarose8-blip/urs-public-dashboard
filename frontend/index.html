@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URSB Noise Monitoring - Public Dashboard</title>
+
+    <!-- CDN Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header (from login.html) -->
+    <div class="header">
+        <div class="logo-section">
+            <img src="urs.png" alt="URSB Logo" class="logo">
+            <div class="header-title">
+                <span class="system-text">University of Rizal System</span>
+                <span class="ursb">Binangonan</span>
+            </div>
+        </div>
+        <div class="header-right-public">
+            <div class="datetime">
+                <span id="currentDate"></span> • <span id="currentTime"></span>
+            </div>
+            <div class="last-updated" id="lastUpdated">Last updated: --:--</div>
+        </div>
+    </div>
+
+    <!-- Hero Section (from login.html) - Pulled out for full width -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="welcome-title">
+                <span class="brand">URSB Real-Time <br>Noise Monitoring <br>Dashboard</span>
+            </h1>
+            <p class="subtitle">
+                Real-time noise pollution data across University of Rizal System Binangonan. Providing transparency
+                and environmental awareness for the campus community.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="main-wrapper">
+        <!-- Data Section (from dashboard.html) -->
+        <section class="dashboard-content">
+            <div class="section-divider">
+                <span class="divider-text">LIVE MONITORING DATA</span>
+            </div>
+
+            <div class="current-noise" id="current-noise">
+                <!-- Dynamic cards -->
+            </div>
+
+            <div class="overview-grid">
+                <!-- Peak Stats -->
+                <div class="stats-section" id="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-label">PEAK NOISE TODAY</div>
+                            <div class="stat-value" id="noise-peak">--</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-volume-high"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-label">PRIMARY SOURCE</div>
+                            <div class="stat-value" id="noise-source">--</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    </div>
+                </div>
+                <div id="locationStatsContainer" class="stats-section"></div>
+
+                <!-- Trend Chart -->
+                <div class="chart-section">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <i class="fa-solid fa-chart-line gradient-icon2"></i>
+                            <h2 class="sensor-title">TODAY'S NOISE TREND</h2>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <!-- Icons container -->
+                        <div class="noise-icons">
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Truck (120 dB)"><i
+                                        class="fa-solid fa-truck-medical gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Concert (110 dB)"><i
+                                        class="fi fi-bs-stage-concert gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Motorcycle (100 dB)"><i
+                                        class="fa-solid fa-motorcycle gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Blender (90 dB)"><i
+                                        class="fa-solid fa-blender gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Traffic (80 dB)"><i
+                                        class="fi fi-bs-cars gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Vacuum (70 dB)"><i
+                                        class="fi fi-bs-vacuum gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Conversation (60 dB)"><i
+                                        class="fi fi-bs-users-speaking gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Rain (50 dB)"><i
+                                        class="fi fi-bs-cloud-rain gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Library (40 dB)"><i
+                                        class="fi fi-bs-books gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Whisper (30 dB)"><i
+                                        class="fi fi-bs-user-speaking gradient-icon"></i></div>
+                            </div>
+                            <div class="noise-icon">
+                                <div class="source-icon" title="Rustling leaves (20 dB)"><i
+                                        class="fi fi-bs-bio-leaves gradient-icon"></i></div>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="noiseChart"></canvas>
+                            <div class="severity-labels">
+                                <div class="severity-label severity-severe">SEVERE</div>
+                                <div class="severity-label severity-high">HIGH</div>
+                                <div class="severity-label severity-moderate">MODERATE</div>
+                                <div class="severity-label severity-low">LOW</div>
+                            </div>
+                            <div class="chart-legend"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sensors-grid" id="sensors-grid">
+                    <!-- Dynamic cards -->
+                </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 URSB Noise Monitoring System | Developed by MOSAIC
+    </div>
+
+    <!-- Chart Tooltip -->
+    <div id="chartTooltip" class="chart-tooltip"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
