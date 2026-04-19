@@ -1027,6 +1027,20 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .sensor-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .sensor-content {
+        grid-template-columns: 1fr;
+    }
+
+    .noise-level-box {
+        width: 100%;
+    }
+
     .chart-container {
         gap: 10px;
     }
@@ -1109,7 +1123,12 @@ body {
     }
 
     .stats-section {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .stat-card {
+        width: 100%;
+        min-width: unset;
     }
 
     .stat-card {
