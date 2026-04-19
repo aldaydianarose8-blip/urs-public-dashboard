@@ -1041,6 +1041,10 @@ body {
         width: 100%;
     }
 
+    .noise-source-section {
+        padding-left: 0;
+    }
+
     .chart-container {
         gap: 10px;
     }
