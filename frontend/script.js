@@ -610,7 +610,7 @@ function drawChart(locationData, combinedAvg) {
         top: 20,
         right: isSmallMobile ? 40 : (isMobile ? 50 : 60),
         bottom: 40,
-        left: isSmallMobile ? 35 : (isMobile ? 40 : 50)
+        left: isSmallMobile ? 52 : (isMobile ? 52 : 50)
     };
     const chartWidth = width - padding.left - padding.right;
     const chartHeight = height - padding.top - padding.bottom;
