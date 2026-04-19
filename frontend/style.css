@@ -495,8 +495,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding-top: 5px;
-    padding-bottom: 70px;
-    min-width: 35px;
+    padding-bottom: 25px;
+    min-width: 30px;
 }
 
 .noise-icon {
@@ -1050,8 +1050,8 @@ body {
     }
 
     .noise-icons {
-        width: 60px;
-        margin-right: -20px;
+        width: 35px;
+        margin-right: -10px;
     }
 
     .source-icon i {
@@ -1170,9 +1170,9 @@ body {
 
 
     .noise-icons {
-        width: 50px;
-        padding-bottom: 100px;
-        margin-right: -20px;
+        width: 30px;
+        padding-bottom: 25px;
+        margin-right: -15px;
     }
 
 
